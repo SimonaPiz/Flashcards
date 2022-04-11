@@ -1,5 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { addQuizIdToTopics } from "../topics/topicsSlice";
 
+export const associatedNewQuizToTopic = (newQuiz) => {
+  return async (dispatch) => {
+    dispatch(addQuiz(newQuiz));
+    dispatch(addQuizIdToTopics(newQuiz));
+  };    
+};
 
 export const quizzesSlice = createSlice({
   name: 'quizzes',
