@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { v4 as uuidv4 } from "uuid";
 import ROUTES from "../app/routes";
 import { ALL_ICONS } from "../data/icons";
-import { addTopic } from "../features/topics/topicsSlice";
+import { addTopic, selectTopics } from "../features/topics/topicsSlice";
 
 export default function NewTopicForm() {
   const [name, setName] = useState("");
   const [icon, setIcon] = useState("");
-  const [topicId, setTopicId] = useState(0);
 
+  const topics = useSelector(selectTopics);
+  let getInitialId = topics.length;
+  const [topicNewId, setTopicNewId] = useState(getInitialId);
+  
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -20,11 +23,10 @@ export default function NewTopicForm() {
     if (name.length === 0) {
       return;
     }
-    setTopicId(topicId + 1);
-
+    setTopicNewId(topicNewId + 1);
     // dispatch your add topic action here
     dispatch(addTopic({
-      id: topicId,
+      id: topicNewId,
       name: name,
       icon: icon,
     }));
