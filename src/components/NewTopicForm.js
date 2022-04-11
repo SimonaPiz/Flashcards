@@ -10,8 +10,7 @@ import { addTopic } from "../features/topics/topicsSlice";
 export default function NewTopicForm() {
   const [name, setName] = useState("");
   const [icon, setIcon] = useState("");
-  const [topicId, setTopicId] = useState(0);
-
+  
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -20,11 +19,10 @@ export default function NewTopicForm() {
     if (name.length === 0) {
       return;
     }
-    setTopicId(topicId + 1);
-
+    
     // dispatch your add topic action here
     dispatch(addTopic({
-      id: topicId,
+      id: uuidv4,
       name: name,
       icon: icon,
     }));
