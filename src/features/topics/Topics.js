@@ -1,4 +1,4 @@
-//import NewTopicForm from "../../components/NewTopicForm";
+import NewTopicForm from "../../components/NewTopicForm";
 import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
@@ -19,7 +19,7 @@ export default function Topics() {
              <img src={topic.icon} alt="" />
              <div className="text-content">
                <h2>{topic.name}</h2>
-               <p>{topic.quizIds.length} Quizzes</p>
+               <p>{/*topic.quizIds.length*/} Quizzes</p>
              </div>
            </div>
          </Link>
