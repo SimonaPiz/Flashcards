@@ -11,7 +11,9 @@ export const associatedNewQuizToTopic = (newQuiz) => {
 export const quizzesSlice = createSlice({
   name: 'quizzes',
   initialState: {
-    quizzes: {},
+    quizzes: {
+      '456': { id: '456', name: 'quiz name', topicId: '123', cardIds: ['1', '2', '3']}
+    },
   },
   reducers: {
     addQuiz: (state, action) => {
