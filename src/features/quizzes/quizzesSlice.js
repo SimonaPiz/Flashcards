@@ -11,14 +11,12 @@ export const associatedNewQuizToTopic = (newQuiz) => {
 export const quizzesSlice = createSlice({
   name: 'quizzes',
   initialState: {
-    quizzes: {
-      '456': { id: '456', name: 'quiz name', topicId: '123', cardIds: ['1', '2', '3']}
-    },
+    quizzes: {},
   },
   reducers: {
     addQuiz: (state, action) => {
       const newQuiz = action.payload; //es. { id: '123', name: 'quiz name', topicId: '456', cardIds: ['1', '2', '3', ...]}
-      return {...state, newQuiz};
+      return {...state.quizzes, [newQuiz.id]: newQuiz};
     }
   }
 });

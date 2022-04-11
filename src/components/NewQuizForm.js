@@ -16,6 +16,15 @@ export default function NewQuizForm() {
   const topics = useSelector(selectTopics);
   const dispatch = useDispatch();
 
+  
+  let initialQuizId = () => { return 0;
+    /*if(topics.quizIds.length === undefined) {
+      return 0;
+    }
+    return topics.quizIds.length;*/
+  };
+  const [quizId, setQuizId] = useState(initialQuizId);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name.length === 0) {
@@ -24,10 +33,12 @@ export default function NewQuizForm() {
 
     const cardIds = [];
 
+
+    setQuizId(quizId +1);
     // create the new cards here and add each card's id to cardIds
     // create the new quiz here
     dispatch(associatedNewQuizToTopic({
-      id: uuidv4,
+      id: quizId,
       name: name,
       topicId: topicId,
       cardIds: cardIds
