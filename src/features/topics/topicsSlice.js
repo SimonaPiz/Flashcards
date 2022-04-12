@@ -19,14 +19,12 @@ export const topicsSlice = createSlice({
     },
     addQuizIdToTopics: (state, action) => {
       const quiz = action.payload; //es {quizId: '123', topicId: '456'}      
-      const addQuizId = (state.topics).map(topic => {
+      for(let topic in state.topics) {
         if(topic.id === quiz.topicId) {
           topic.quizIds.push(quiz.quizId);
-          return topic;
         }    
-        return topic;
-      });
-      addQuizId();
+        return ;
+      };
     }
   },
 });

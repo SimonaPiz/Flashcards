@@ -11,9 +11,9 @@ export default function NewTopicForm() {
   const [name, setName] = useState("");
   const [icon, setIcon] = useState("");
 
-  const topics = useSelector(selectTopics);
-  let getInitialId = topics.length;
-  const [topicNewId, setTopicNewId] = useState(getInitialId);
+  //const topics = useSelector(selectTopics);
+  //let getInitialId = topics.length;
+  //const [topicNewId, setTopicNewId] = useState(getInitialId);
   
   const history = useHistory();
   const dispatch = useDispatch();
@@ -23,10 +23,11 @@ export default function NewTopicForm() {
     if (name.length === 0) {
       return;
     }
-    setTopicNewId(topicNewId + 1);
+    //setTopicNewId(topicNewId + 1);
+
     // dispatch your add topic action here
     dispatch(addTopic({
-      id: topicNewId,
+      id: uuidv4(),
       name: name,
       icon: icon,
     }));
