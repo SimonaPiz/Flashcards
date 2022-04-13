@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 import ROUTES from "../app/routes";
 import { selectTopics } from "../features/topics/topicsSlice";
 import { associatedNewQuizToTopic } from "../features/quizzes/quizzesSlice";
+import { addCard } from "../features/cards/cardsSlice";
 
 export default function NewQuizForm() {
   const [name, setName] = useState("");
@@ -15,33 +16,28 @@ export default function NewQuizForm() {
   const history = useHistory();
   const topics = useSelector(selectTopics);
   const dispatch = useDispatch();
-
   
-  let initialQuizId = () => { return 0;
-    /*if(topics.quizIds.length === undefined) {
-      return 0;
-    }
-    return topics.quizIds.length;*/
-  };
-  const [quizId, setQuizId] = useState(initialQuizId);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name.length === 0) {
       return;
     }
-
-    const cardIds = [];
-
-
-    setQuizId(quizId +1);
+    
     // create the new cards here and add each card's id to cardIds
+    const cardIds = [];
+    cards.map(card => {
+      let cardId = uuidv4();
+      cardIds.push(cardId);
+      dispatch(addCard({...card, id: cardId}));
+    });
+
     // create the new quiz here
+    let quizId = uuidv4();
     dispatch(associatedNewQuizToTopic({
-      id: quizId,
+      quizId: quizId,
       name: name,
       topicId: topicId,
-      cardIds: cardIds
+      cardIds: cardIds,
     }));
 
     history.push(ROUTES.quizzesRoute());
