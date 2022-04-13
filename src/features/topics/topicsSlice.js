@@ -4,11 +4,11 @@ export const topicsSlice = createSlice({
   name: 'topics',
   initialState: {
     topics: {
-      1: {
-        id: 1,
-        name:"clover",
+      '1': {
+        id: '1',
+        name:"topic example",
         icon:"https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/clover.svg",
-        quizIds: []
+        quizIds: ["quiz01"]
       },
     }
   },
@@ -18,17 +18,12 @@ export const topicsSlice = createSlice({
       return ({...state.topics, [topic.id]: topic});
     },
     addQuizIdToTopics: (state, action) => {
-      const quiz = action.payload; //es {quizId: '123', topicId: '456'}      
-      for(let topic in state.topics) {
-        if(topic.id === quiz.topicId) {
-          topic.quizIds.push(quiz.quizId);
-        }    
-        return ;
-      };
-    }
+      const { topicId, quizId } = action.payload; //es {quizId: '123', topicId: '456'}      
+      state.topics[topicId].quizIds.push(quizId);
+    },
   },
 });
 
-export const selectTopics = (state) => state.topics;
+export const selectTopics = (state) => state.topics.topics;
 export const { addTopic, addQuizIdToTopics } = topicsSlice.actions;
 export default topicsSlice.reducer;

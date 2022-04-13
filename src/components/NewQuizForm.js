@@ -26,16 +26,18 @@ export default function NewQuizForm() {
     // create the new cards here and add each card's id to cardIds
     const cardIds = [];
     cards.map(card => {
-      dispatch(addCard(card));
-      cardIds.push(card.id);
+      let cardId = uuidv4();
+      cardIds.push(cardId);
+      dispatch(addCard({...card, id: cardId}));
     });
 
     // create the new quiz here
+    let quizId = uuidv4();
     dispatch(associatedNewQuizToTopic({
-      quizId: uuidv4(),
+      quizId: quizId,
       name: name,
       topicId: topicId,
-      cardIds: cardIds
+      cardIds: cardIds,
     }));
 
     history.push(ROUTES.quizzesRoute());
@@ -54,7 +56,6 @@ export default function NewQuizForm() {
   const updateCardState = (index, side, value) => {
     const newCards = cards.slice();
     newCards[index][side] = value;
-    newCards[index].id = index;
     setCards(newCards);
   };
 

@@ -12,35 +12,22 @@ export default function Topic() {
   let { topicId } = useParams();
   const topic = topics[topicId];
 
-  const quizzesList = () => {
-    if(topics) {
-      const quizzesForTopic = topic.quizIds.map((quizId) => quizzes[quizId]);
-      quizzesForTopic.map((quiz) => {
-        return (
-          <li className="quiz" key={quiz.id}>
-            <Link to={ROUTES.quizRoute(quiz.id)}>{quiz.name}</Link>
-          </li>
-        );
-      });
-    }
-    return <li>'no quizzes are generate yet'</li>;
-  };
-
-  if (!topics) {
-    return 'no topic is created yet';
-  } else{
-
+  const quizzesForTopic = topic.quizIds.map((quizId) => quizzes[quizId]);
+  console.log(quizzesForTopic);
   return (
     <section>
       <img src={topic.icon} alt="" className="topic-icon" />
       <h1>Topic: {topic.name}</h1>
       <ul className="quizzes-list">
-        {quizzesList}
+        { quizzesForTopic.map((quiz) => {
+          <li className="quiz" key={quiz.quizId}>
+            <Link to={ROUTES.quizRoute(quiz.quizId)}>{quiz.name}</Link>
+          </li>
+        })}
       </ul>
       <Link to="/quizzes/new" className="button center">
         Create a New Quiz
       </Link>
     </section>
   );
-}
 }
