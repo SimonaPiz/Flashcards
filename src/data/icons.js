@@ -1,45 +1,45 @@
 export const BOOK_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/book.svg";
+  "./icon/book.svg";
 export const BALLOON_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/balloon.svg";
+  "./icon/balloon.svg";
 export const BIRD_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/bird.svg";
+  "./icon/bird.svg";
 export const CALENDAR_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/calendar.svg";
+  "./icon/calendar.svg";
 export const CLOVER_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/clover.svg";
+  "./icon/clover.svg";
 export const CRAYONS_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/crayons.svg";
+  "./icon/crayons.svg";
 export const DATA_FLOW_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/data-flow.svg";
+  "./icon/data-flow.svg";
 export const FENCE_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/fence.svg";
+  "./icon/fence.svg";
 export const GRILL_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/grill.svg";
+  "./icon/grill.svg";
 export const HAND_DRILL_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/hand-drill.svg";
+  "./icon/hand-drill.svg";
 export const HAT_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/hat.svg";
+  "./icon/hat.svg";
 export const INTERNET_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/internet.svg";
+  "./icon/internet.svg";
 export const LADYBUG_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/ladybug.svg";
+  "./icon/ladybug.svg";
 export const LEAVES_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/leaves.svg";
+  "./icon/leaves.svg";
 export const MEDICINE_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/medicine.svg";
+  "./icon/medicine.svg";
 export const NEST_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/nest.svg";
+  "./icon/nest.svg";
 export const SHUTTLECOCK_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/shuttlecock.svg";
+  "./icon/shuttlecock.svg";
 export const SPADE_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/spade.svg";
+  "./icon/spade.svg";
 export const STATISTICS_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/statistics.svg";
+  "./icon/statistics.svg";
 export const SUN_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/sun.svg";
+  "./icon/sun.svg";
 export const TREE_ICON =
-  "https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/tree.svg";
+  "./icon/tree.svg";
 
 export const ALL_ICONS = [
   {

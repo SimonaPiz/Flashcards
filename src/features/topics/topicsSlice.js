@@ -7,7 +7,7 @@ export const topicsSlice = createSlice({
       '1': {
         id: '1',
         name:"topic example",
-        icon:"https://static-assets.codecademy.com/skillpaths/react-redux/redux-quiz-app/clover.svg",
+        icon:"./icon/clover.svg",
         quizIds: ["quiz01"]
       },
     }
