@@ -25,7 +25,7 @@ export default function NewQuizForm() {
     
     // create the new cards here and add each card's id to cardIds
     const cardIds = [];
-    cards.map(card => {
+    cards.forEach(card => {
       let cardId = uuidv4();
       cardIds.push(cardId);
       dispatch(addCard({...card, id: cardId}));
@@ -62,7 +62,7 @@ export default function NewQuizForm() {
   return (
     <section>
       <h1>Create a new quiz</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} name="newQuiz">
         <input
           id="quiz-name"
           value={name}
